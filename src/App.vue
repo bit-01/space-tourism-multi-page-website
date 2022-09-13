@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1 class="m-5">heello</h1>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import sData from '@/data.json'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    
+    
+},
+  data() {
+    return sData
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  background-image: url('/public/home/background-home-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url('/public/home/background-home-tablet.jpg');
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    background-image: url('/public/home/background-home-desktop.jpg');
+  }
 }
 </style>
