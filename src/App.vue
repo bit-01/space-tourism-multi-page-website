@@ -8,6 +8,7 @@
         aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <span class="line"></span>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -198,9 +199,12 @@ a.nav-link:hover, a.nav-link:focus,a.nav-link:active {
 
   }
 
-  .navbar-expand-md .offcanvas {
+  .navbar-expand-md div.offcanvas {
     height: 86px !important;
     position: absolute !important;
+  }
+  .offcanvas-body {
+    padding: 0 2em !important;
   }
 
 }
@@ -208,6 +212,33 @@ a.nav-link:hover, a.nav-link:focus,a.nav-link:active {
 @media (min-width: 992px) {
   body {
     background-image: url('/public/home/background-home-desktop.jpg');
+  }
+
+  nav {
+    margin-top: 2em !important;
+  }
+
+  .navbar-brand {
+    padding: 1.3em 2.5em !important;
+  }
+
+  .offcanvas {
+    min-width: 57.2% !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .offcanvas-body {
+    width: 70%;
+  }
+
+  .line {
+    border-bottom: #fff4 solid 1px;
+    width: 35%;
+    z-index: 1;
+    left: 10em;
+    position: absolute;
+    top: 45%;
   }
 }
 </style>
