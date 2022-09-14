@@ -4,7 +4,7 @@
       <a class="navbar-brand" href="#">
         <img src="/shared/logo.svg">
       </a>
-      <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -13,7 +13,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <ul class="navbar-nav flex-grow-1">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#"><span class="num">00</span> Home</a>
             </li>
@@ -31,6 +31,26 @@
       </div>
     </div>
   </nav>
+
+
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
+  <h1 class="m-4">Hello</h1>
 </template>
 
 <script>
@@ -59,10 +79,11 @@ body {
 }
 
 nav {
-  margin-top: .6em;
+  margin-top: 1em;
 }
-nav .container-fluid {
-  padding: 0 1.5em;
+
+.navbar-brand, .navbar-toggler {
+  padding: 0 .8em !important;
 }
 .navbar-brand > img {
   width:40px;
@@ -110,8 +131,13 @@ a.nav-link {
   font-weight: bold;
 }
 
-a.nav-link:hover {
-  border-bottom: solid 2px #fff; 
+a.nav-link.active {
+  border-bottom: solid 2px #fff !important; 
+  color: #fff !important; 
+}
+a.nav-link:hover, a.nav-link:focus,a.nav-link:active {
+  border-bottom: solid 2px rgba(255,255,255,.5025) !important;
+  color: #fff !important; 
 }
 
 @media (min-width: 768px) {
@@ -119,10 +145,62 @@ a.nav-link:hover {
     background-image: url('/public/home/background-home-tablet.jpg');
   }
 
+  nav .container-fluid {
+    padding: 0 !important;
+  }
+
+  .navbar-brand {
+    padding: 1.3em 1.8em !important;
+  }
+  .navbar-brand > img {
+    width:48px;
+  }
 
   .nav-item {
     height: 100%;
     margin: 0 .7em;
+    width: auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a.nav-link {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    display: flex;
+  }
+
+  .num {
+    display: none;
+  }
+
+  nav {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .navbar-nav {
+    padding: 0 !important;
+    display: flex;
+    justify-content: space-evenly !important;
+    
+  }
+
+  .navbar-nav, .offcanvas-body {
+    height: 100%;
+  }
+
+  div.offcanvas.offcanvas-end{
+    background-color: rgba(255,255,255,.04) !important;
+
+  }
+
+  .navbar-expand-md .offcanvas {
+    height: 86px !important;
+    position: absolute !important;
   }
 
 }
