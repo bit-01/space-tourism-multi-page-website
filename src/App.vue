@@ -35,23 +35,12 @@
 
 
   <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
-  <h1 class="m-4">Hello</h1>
+  <h2 class="m-4">Hello</h2>
+  <h3 class="m-4">Hello</h3>
+  <h4 class="m-4">Hello</h4>
+  <h5 class="m-4">Hello</h5>
+  <h5 class="m-4">Hello</h5>
+  <p class="m-4">Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello</p>
 </template>
 
 <script>
@@ -77,7 +66,44 @@ body {
   background-size: cover;
   height: 100vh;
   background-position: center center;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 18px !important;
+  color: #fff !important;
 }
+
+h1,h2,h3,h4,h6 {
+  font-family: 'Bellefair', serif !important;
+  text-transform: uppercase;
+}
+h1,h2,h3,h4,h5,h6 {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 150px !important;
+}
+h2 {
+  font-size: 100px !important;
+}
+h3 {
+  font-size: 56px !important;
+}
+h4 {
+  font-size: 32px !important;
+}
+h5 {
+  font-size: 28px !important;
+  letter-spacing: 4.75px;
+}
+h6.subheading1 {
+  font-size: 28px !important;
+}
+h6.subheading2 {
+  font-size: 14px !important;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  letter-spacing: 2.35px;
+}
+
 
 nav {
   margin-top: 1em;
@@ -94,6 +120,10 @@ nav {
   background-image: url('/public/shared/icon-hamburger.svg') !important;
   width: 24px !important;
   height: 21px !important;
+}
+
+.navbar-toggler, .btn-close {
+  box-shadow: none !important;
 }
 
 .offcanvas {
@@ -121,7 +151,10 @@ nav {
 a.nav-link {
   padding: 1em;
   text-transform: uppercase;
+  font-size: 16px !important;
+  letter-spacing: 2.7px;
   color: #fff;
+
 }
 .nav-item {
   width: 100%;
@@ -139,6 +172,10 @@ a.nav-link.active {
 a.nav-link:hover, a.nav-link:focus,a.nav-link:active {
   border-bottom: solid 2px rgba(255,255,255,.5025) !important;
   color: #fff !important; 
+}
+
+.line {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -230,6 +267,7 @@ a.nav-link:hover, a.nav-link:focus,a.nav-link:active {
 
   .offcanvas-body {
     width: 70%;
+    justify-content: center !important;
   }
 
   .line {
@@ -239,6 +277,11 @@ a.nav-link:hover, a.nav-link:focus,a.nav-link:active {
     left: 10em;
     position: absolute;
     top: 45%;
+    display: inline-block;
+  }
+
+  .num {
+    display: inline-block;
   }
 }
 </style>
