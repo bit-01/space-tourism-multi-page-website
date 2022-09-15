@@ -47,7 +47,9 @@
   </script>
   
   <style scoped>
-  
+  .offcanvas-backdrop {
+    display: none !important;
+  }
   nav {
     margin-top: 1em;
   }

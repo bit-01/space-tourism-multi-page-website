@@ -96,17 +96,20 @@ h5 {
   font-size: 16px !important;
   letter-spacing: 2.7px;
 }
-h6.subheading1 {
+.subheading1 {
   font-size: 28px !important;
 }
-h6.subheading2 {
+.subheading2 {
   font-size: 14px !important;
   font-family: "Barlow Condensed", sans-serif !important;
   letter-spacing: 2.35px;
   text-align: center;
+  
+}
+h5.subheading2 {
   margin-bottom: 2.2em;
 }
-h6.subheading2 > span {
+h5.subheading2 > span {
   opacity: 25%;
   margin-right: 18px;
 }
@@ -128,8 +131,14 @@ h6.subheading2 > span {
     font-size: 28px !important;
     letter-spacing: 4.75px;
   }
+
+  h5.subheading2 {
+    font-size: 24px !important;
+    text-align: start;
+  }
 }
 
 @media (min-width: 992px) {
+  .page-title h5 {margin-bottom: .5em;}
 }
 </style>
