@@ -1,14 +1,11 @@
 <template>
-  <AppNav></AppNav>
+  <AppNav />
+
+  <main>
+    <router-view />
+  </main>
 
 
-  <h1 class="m-4">Hello</h1>
-  <h2 class="m-4">Hello</h2>
-  <h3 class="m-4">Hello</h3>
-  <h4 class="m-4">Hello</h4>
-  <h5 class="m-4">Hello</h5>
-  <h5 class="m-4">Hello</h5>
-  <p class="m-4">Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello</p>
 </template>
 
 <script>
@@ -19,8 +16,7 @@ export default {
   name: 'App',
   components: {
     AppNav
-
-  },
+},
   data() {
     return sData
   }

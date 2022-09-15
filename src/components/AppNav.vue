@@ -16,16 +16,16 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav flex-grow-1">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"><span class="num">00</span> Home</a>
+                <router-link :to="{name: 'app'}" :class="['nav-link', $route.name == 'app' ? 'active' : '']" aria-current="page" ><span class="num">00</span> Home</router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><span class="num">01</span> Destination</a>
+                <router-link :to="{name: 'destination'}" :class="['nav-link', $route.name == 'destination' ? 'active' : '']" ><span class="num">01</span> Destination</router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><span class="num">02</span> Crew</a>
+                <router-link :to="{name: 'crew'}" :class="['nav-link', $route.name == 'crew' ? 'active' : '']" ><span class="num">02</span> Crew</router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><span class="num">03</span> Technology</a>
+                <router-link :to="{name: 'technology'}" :class="['nav-link', $route.name == 'technology' ? 'active' : '']" ><span class="num">03</span> Technology</router-link>
               </li>
             </ul>
           </div>

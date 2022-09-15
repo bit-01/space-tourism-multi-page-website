@@ -5,10 +5,17 @@ import App from './App.vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 
-import AppNav from '@/components/AppNav.vue'
+import router from '@/router'
+
+router.beforeEach((to, from, next) => {
+    document.title = to.meta.title
+    window.scrollTo(0,0)
+    next()
+})
+
 
 const vApp = createApp(App)
 
-vApp.component('AppNav', AppNav)
+vApp.use(router);
 
 vApp.mount('#app')
