@@ -76,7 +76,7 @@
   }
   
   .offcanvas-header {
-    justify-content: end !important;
+    justify-content: flex-end !important;
     padding: 2.1em 1.8em !important;
     border: none !important;
   }
