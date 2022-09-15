@@ -90,6 +90,12 @@ export default {
   text-align: center;
   margin-bottom: 5em !important;
 }
+.home div.row,
+.home div.col-lg-7,
+.explore {
+  padding: 0 !important;
+  margin: 0 !important;
+}
 
 @media (min-width: 768px) {
   h5 {
@@ -121,13 +127,6 @@ export default {
 }
 
 @media (min-width: 992px) {
-  .row,
-  .col-lg-7,
-  .explore {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
   .headContainer {
     text-align: start;
     margin-bottom: 0 !important;

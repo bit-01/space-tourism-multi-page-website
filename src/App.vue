@@ -1,8 +1,8 @@
 <template>
   <AppNav />
 
-  <main
-    style="flex-grow: 1; flex-grow: 1; align-items: center; display: inherit"
+  <main 
+    style="flex-grow: 1; flex-grow: 1; align-items: center; display: inherit;"
   >
     <!-- <router-view /> -->
     <router-view v-slot="{ Component }">
@@ -46,8 +46,8 @@ export default {
 }
 body {
   transition: background-image 0.5s ease;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
   height: 100vh;
   background-position: center center;
   font-family: "Barlow Condensed", sans-serif !important;
@@ -103,6 +103,12 @@ h6.subheading2 {
   font-size: 14px !important;
   font-family: "Barlow Condensed", sans-serif !important;
   letter-spacing: 2.35px;
+  text-align: center;
+  margin-bottom: 2.2em;
+}
+h6.subheading2 > span {
+  opacity: 25%;
+  margin-right: 18px;
 }
 
 @media (min-width: 768px) {
