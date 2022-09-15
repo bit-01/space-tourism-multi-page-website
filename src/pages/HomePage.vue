@@ -22,9 +22,19 @@
 </template>
 
 <script>
+import sData from "@/data.json";
+
+export default {
+  data() {
+    return { sData };
+  },
+  beforeCreate: function () {
+    document.body.className = "home";
+  },
+};
 </script>
 
-<style>
+<style scoped>
 @keyframes scaleIn {
   0% {
     transform: scale(0.8, 0.8);
@@ -38,9 +48,6 @@
     transform: scale(0.8, 0.8);
     /* opacity: .8; */
   }
-}
-body {
-  background-image: url("/public/home/background-home-mobile.jpg");
 }
 .circle {
   background-color: #fff;
@@ -93,10 +100,6 @@ body {
   p {
     font-size: 21px;
   }
-
-  body {
-    background-image: url("/public/home/background-home-tablet.jpg");
-  }
   .circle {
     font-size: 32px;
     letter-spacing: 2px;
@@ -104,14 +107,25 @@ body {
     height: 274px;
   }
 
-    .headContainer {
-    margin-bottom: 9em !important;
+  .headContainer {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .row {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 @media (min-width: 992px) {
-  body {
-    background-image: url("/public/home/background-home-desktop.jpg");
+  .row,
+  .col-lg-7,
+  .explore {
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .headContainer {
@@ -127,6 +141,23 @@ body {
 
   .circle {
     margin: 0 !important;
+  }
+}
+</style>
+
+<style>
+body.home {
+  background: url("/public/home/background-home-mobile.jpg");
+}
+@media (min-width: 768px) {
+  body.home {
+    background: url("/public/home/background-home-tablet.jpg");
+  }
+}
+
+@media (min-width: 992px) {
+  body.home {
+    background: url("/public/home/background-home-desktop.jpg");
   }
 }
 </style>

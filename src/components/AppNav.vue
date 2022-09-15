@@ -42,14 +42,11 @@
     components: {
   
   
-    },
-    data() {
-      
     }
   }
   </script>
   
-  <style>
+  <style scoped>
   
   nav {
     margin-top: 1em;
