@@ -23,7 +23,11 @@
       </div>
       <div class="col-lg-4">
         <ul
-          class="nav nav-pills mb-3 justify-content-center justify-content-lg-start"
+          class="
+            nav nav-pills
+            mb-3
+            justify-content-center justify-content-lg-start
+          "
           id="pills-tab"
           role="tablist"
         >
@@ -38,12 +42,35 @@
               :id="'pills-' + item.name.toLowerCase() + '-tab'"
               data-bs-toggle="pill"
               :data-bs-target="'#pills-' + item.name.toLowerCase()"
-              :data-second-target="'#data-' + item.name.toLowerCase()"
+              :data-second-target="
+                '#pills-data-' + item.name.toLowerCase() + '-tab'
+              "
               type="button"
               role="tab"
               :aria-controls="'#pills-' + item.name.toLowerCase()"
               :aria-selected="index == 0 ? true : false"
               @click="onPlanetClick($event)"
+            >
+              {{ item.name }}
+            </button>
+          </li>
+        </ul>
+
+        <ul class="nav nav-pills d-none" id="pills-data-tab" role="tablist">
+          <li
+            v-for="(item, index) in dests"
+            :key="index"
+            class="nav-item"
+            role="presentation"
+          >
+            <button
+              :class="['nav-link', 'pill-data-btn', index == 0 ? 'active' : '']"
+              :id="'pills-data-' + item.name.toLowerCase() + '-tab'"
+              data-bs-toggle="pill"
+              :data-bs-target="'#data-' + item.name.toLowerCase()"
+              type="button"
+              role="tab"
+              :aria-controls="'#data-' + item.name.toLowerCase()"
             >
               {{ item.name }}
             </button>
@@ -68,16 +95,15 @@
             <h2>{{ item.name }}</h2>
             <p class="desc">{{ item.description }}</p>
             <div class="row justify-content-center justify-content-lg-start">
-                <div class="col-lg-6 col-md-4 mb-4 text-lg-start">
-                    <h6 class="subheading2">avg. distance</h6>
-                    <h5 class="font-bellafair">{{ item.distance }}</h5>
-                </div>
-                <div class="col-lg-6 col-md-4 mb-4 text-lg-start">
-                    <h6 class="subheading2">Est. travel time</h6>
-                    <h5 class="font-bellafair">{{ item.travel }}</h5>
-                </div>
+              <div class="col-lg-6 col-md-4 mb-4 text-lg-start">
+                <h6 class="subheading2">avg. distance</h6>
+                <h5 class="font-bellafair">{{ item.distance }}</h5>
+              </div>
+              <div class="col-lg-6 col-md-4 mb-4 text-lg-start">
+                <h6 class="subheading2">Est. travel time</h6>
+                <h5 class="font-bellafair">{{ item.travel }}</h5>
+              </div>
             </div>
-            
           </div>
         </div>
       </div>
@@ -87,6 +113,7 @@
 
 <script>
 import sData from "@/data.json";
+import { Tab } from "bootstrap";
 
 export default {
   data() {
@@ -100,35 +127,32 @@ export default {
   methods: {
     onPlanetClick(event) {
       let otherTabs = event.originalTarget.dataset.secondTarget;
-      let nav = document.querySelector(otherTabs);
-      let active = document.querySelector(".planet-data.show.active");
-
-      active.classList.remove("active", "show");
-      nav.classList.add("show", "active");
+      let nav = new Tab(document.querySelector(otherTabs));
+      nav.show();
     },
   },
 };
 </script>
 
 <style>
-    main {
-    align-items: flex-start !important;
-    }
-    body.destination {
-    background: url("/public/destination/background-destination-mobile.jpg");
-    }
+main {
+  align-items: flex-start !important;
+}
+body.destination {
+  background: url("/public/destination/background-destination-mobile.jpg");
+}
 
-    @media (min-width: 768px) {
-    body.destination {
-        background: url("/public/destination/background-destination-tablet.jpg");
-    }
-    }
+@media (min-width: 768px) {
+  body.destination {
+    background: url("/public/destination/background-destination-tablet.jpg");
+  }
+}
 
-    @media (min-width: 992px) {
-    body.destination {
-        background: url("/public/destination/background-destination-desktop.jpg");
-    }
-    }
+@media (min-width: 992px) {
+  body.destination {
+    background: url("/public/destination/background-destination-desktop.jpg");
+  }
+}
 </style>
 
 <style scoped>
@@ -147,11 +171,11 @@ export default {
   font-size: 15px;
 }
 .planet-data .subheading2 {
-    color: #D0D6F9;
-    margin-bottom: 12px !important;
+  color: #d0d6f9;
+  margin-bottom: 12px !important;
 }
 .planet-data h5 {
-    font-size: 28px !important;
+  font-size: 28px !important;
 }
 .nav-pills .nav-link {
   font-size: 14px !important;
@@ -175,38 +199,37 @@ export default {
 }
 
 @media (min-width: 768px) {
-    .planet-image {
-        width: 300px;
-    }
-    .nav-pills .nav-link {
-        font-size: 16px !important;
-    }
+  .planet-image {
+    width: 300px;
+  }
+  .nav-pills .nav-link {
+    font-size: 16px !important;
+  }
 
-    .planet-data h2 {
-        font-size: 80px !important;
-    }
+  .planet-data h2 {
+    font-size: 80px !important;
+  }
 
-    .planet-data .desc {
-        padding-bottom: 3em !important;
-    }
+  .planet-data .desc {
+    padding-bottom: 3em !important;
+  }
 }
 
 @media (min-width: 992px) {
-    .planet-data h2 {
-        text-align: start;
-    }
-    .planet-data .desc {
-        text-align: start;
-        margin: auto 0 !important;
-        width: 100%;
-    }
-    .planet-data .subheading2 {
-        text-align: start;
-    }
+  .planet-data h2 {
+    text-align: start;
+  }
+  .planet-data .desc {
+    text-align: start;
+    margin: auto 0 !important;
+    width: 100%;
+  }
+  .planet-data .subheading2 {
+    text-align: start;
+  }
 
-    .planet-data h5 {
-        letter-spacing: 0;
-    }
-    
+  .planet-data h5 {
+    letter-spacing: 0;
+  }
 }
 </style>
