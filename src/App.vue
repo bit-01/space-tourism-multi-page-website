@@ -1,7 +1,7 @@
 <template>
   <AppNav />
 
-  <main>
+  <main style="flex-grow:1;flex-grow: 1;align-items: center;display: inherit;">
     <router-view />
   </main>
 
@@ -24,6 +24,12 @@ export default {
 </script>
 
 <style>
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch !important;
+  height: 100vh;
+}
 body {
   background-image: url('/public/home/background-home-mobile.jpg');
   background-repeat: no-repeat;
@@ -33,6 +39,13 @@ body {
   font-family: 'Barlow Condensed', sans-serif !important;
   font-size: 18px !important;
   color: #fff !important;
+}
+
+.font-bellafair {
+  font-family: 'Bellefair', serif !important;
+}
+.font-barlow {
+  font-family: 'Barlow Condensed', sans-serif !important;
 }
 
 h1,h2,h3,h4,h6 {
