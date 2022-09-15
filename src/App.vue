@@ -31,7 +31,6 @@ export default {
   height: 100vh;
 }
 body {
-  background-image: url('/public/home/background-home-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -57,20 +56,20 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-  font-size: 150px !important;
+  font-size: 80px !important;
 }
 h2 {
-  font-size: 100px !important;
-}
-h3 {
   font-size: 56px !important;
 }
-h4 {
+h3 {
   font-size: 32px !important;
 }
-h5 {
+h4 {
   font-size: 28px !important;
-  letter-spacing: 4.75px;
+}
+h5 {
+  font-size: 16px !important;
+  letter-spacing: 2.7px;
 }
 h6.subheading1 {
   font-size: 28px !important;
@@ -82,16 +81,29 @@ h6.subheading2 {
 }
 
 @media (min-width: 768px) {
-  body {
-    background-image: url('/public/home/background-home-tablet.jpg');
-  }
+  
+
+    h1 {
+    font-size: 150px !important;
+    }
+    h2 {
+      font-size: 100px !important;
+    }
+    h3 {
+      font-size: 56px !important;
+    }
+    h4 {
+      font-size: 32px !important;
+    }
+    h5 {
+      font-size: 28px !important;
+      letter-spacing: 4.75px;
+    }
 
 }
 
 @media (min-width: 992px) {
-  body {
-    background-image: url('/public/home/background-home-desktop.jpg');
-  }
+
 
 }
 </style>
