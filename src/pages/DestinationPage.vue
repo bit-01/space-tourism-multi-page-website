@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row page-title p-2 mt-2">
       <div class="col-12">
-        <h5 class="subheading2"><span>01</span> Pick your destination</h5>
+        <h5 class="subheading2"><span>{{metaData.number}}</span> {{metaData.title}}</h5>
       </div>
     </div>
     <div class="row">
@@ -114,11 +114,13 @@
 <script>
 import sData from "@/data.json";
 import { Tab } from "bootstrap";
+import {useRoute} from 'vue-router'
 
 export default {
   data() {
     return {
       dests: sData.destinations,
+      metaData: useRoute().meta
     };
   },
   beforeCreate: function () {

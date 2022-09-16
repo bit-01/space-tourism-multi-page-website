@@ -8,7 +8,7 @@ import 'bootstrap'
 import router from '@/router'
 
 router.beforeEach((to, from, next) => {
-    document.title = to.meta.title
+    document.title = to.meta.number + "  " + to.meta.title
     window.scrollTo(0,0)
     next()
 })

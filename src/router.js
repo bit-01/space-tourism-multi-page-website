@@ -7,6 +7,7 @@ const routes = [
         name: 'app',
         component: () => import('@/pages/HomePage.vue'),
         meta: {
+            number: "00",
             title: 'Space Tourism'
         }
     },
@@ -15,7 +16,8 @@ const routes = [
         path: '/destination/',
         component: () => import('@/pages/DestinationPage.vue'),
         meta: {
-            title: "ST - Destination"
+            number:"01",
+            title: "Pick Your Destination"
         }
     },
     {
@@ -23,7 +25,8 @@ const routes = [
         path: '/crew/',
         component: () => import('@/pages/CrewPage.vue'),
         meta: {
-            title: "ST - Crew"
+            number: "02",
+            title: "Meet Your Crew"
         }
     },
     {
@@ -31,7 +34,8 @@ const routes = [
         path: '/technology/',
         component: () => import('@/pages/TechnologyPage.vue'),
         meta: {
-            title: "ST - Technology"
+            number: "03",
+            title: "Space Launch 101"
         }
     }
 ]

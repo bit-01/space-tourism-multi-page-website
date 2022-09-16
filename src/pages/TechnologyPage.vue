@@ -2,7 +2,7 @@
   <div class=" container-fluid">
     <div class="row page-title p-2 mt-2">
       <div class="col-12">
-        <h5 class="subheading2"><span>03</span> Space launch 101</h5>
+        <h5 class="subheading2"><span>{{metaData.number}}</span> {{metaData.title}}</h5>
       </div>
     </div>
     <div class="row">
@@ -133,11 +133,13 @@
 <script>
 import sData from "@/data.json";
 import { Tab } from "bootstrap";
+import {useRoute} from 'vue-router'
 
 export default {
   data() {
     return {
       dests: sData.technology,
+      metaData: useRoute().meta
     };
   },
   beforeCreate: function () {
