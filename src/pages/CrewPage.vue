@@ -165,9 +165,6 @@ h3 {
   display: flex;
   flex-direction: column;
 }
-.carousel .carousel-item {
-  transition-duration: 1.4s;
-}
 @media (min-width: 768px) {
   .subheading1 {
     font-size: 24px !important;
