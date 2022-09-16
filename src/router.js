@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-publicPath = process.env.BASE_URL
+let publicPath = process.env.BASE_URL
 const routes = [
     {
         path: publicPath+'',
