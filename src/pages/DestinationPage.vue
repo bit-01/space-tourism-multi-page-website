@@ -2,7 +2,9 @@
   <div class="container">
     <div class="row page-title p-2 mt-2">
       <div class="col-12">
-        <h5 class="subheading2"><span>{{metaData.number}}</span> {{metaData.title}}</h5>
+        <h5 class="subheading2">
+          <span>{{ metaData.number }}</span> {{ metaData.title }}
+        </h5>
       </div>
     </div>
     <div class="row">
@@ -17,7 +19,11 @@
             :aria-labelledby="'pills-' + item.name.toLowerCase() + '-tab'"
             tabindex="0"
           >
-            <img :src="item.images.png" class="planet-image" />
+            <img
+              :src="publicPath + item.images.png"
+              :alt="item.name"
+              class="planet-image"
+            />
           </div>
         </div>
       </div>
@@ -114,21 +120,24 @@
 <script>
 import sData from "@/data.json";
 import { Tab } from "bootstrap";
-import {useRoute} from 'vue-router'
+import { useRoute } from "vue-router";
 
 export default {
   data() {
     return {
       dests: sData.destinations,
-      metaData: useRoute().meta
+      metaData: useRoute().meta,
     };
   },
   beforeCreate: function () {
     document.body.className = "destination";
   },
+  props: ["publicPath"],
+
   methods: {
     onPlanetClick(event) {
-      let otherTabs = event.originalTarget.dataset.secondTarget;
+      console.log(event)
+      let otherTabs = event.target.dataset.secondTarget;
       let nav = new Tab(document.querySelector(otherTabs));
       nav.show();
     },

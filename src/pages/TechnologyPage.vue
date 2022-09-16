@@ -1,8 +1,10 @@
 <template>
-  <div class=" container-fluid">
+  <div class="container-fluid">
     <div class="row page-title p-2 mt-2">
       <div class="col-12">
-        <h5 class="subheading2"><span>{{metaData.number}}</span> {{metaData.title}}</h5>
+        <h5 class="subheading2">
+          <span>{{ metaData.number }}</span> {{ metaData.title }}
+        </h5>
       </div>
     </div>
     <div class="row">
@@ -11,7 +13,7 @@
           class="
             nav nav-pills
             mb-3
-            justify-content-center justify-content-lg-center 
+            justify-content-center justify-content-lg-center
           "
           id="pills-tab"
           role="tablist"
@@ -119,9 +121,13 @@
             <picture>
               <source
                 media="(min-width: 992px)"
-                :srcset="item.images.portrait"
+                :srcset="publicPath+item.images.portrait"
               />
-              <img :src="item.images.landscape" class="planet-image" />
+              <img
+                :alt="item.name"
+                :src="publicPath + item.images.landscape"
+                class="planet-image"
+              />
             </picture>
           </div>
         </div>
@@ -133,15 +139,17 @@
 <script>
 import sData from "@/data.json";
 import { Tab } from "bootstrap";
-import {useRoute} from 'vue-router'
+import { useRoute } from "vue-router";
 
 export default {
   data() {
     return {
       dests: sData.technology,
-      metaData: useRoute().meta
+      metaData: useRoute().meta,
     };
   },
+  props: ["publicPath"],
+
   beforeCreate: function () {
     document.body.className = "technology";
   },
@@ -244,9 +252,9 @@ h3 {
   }
   h3 {
     font-size: 56px !important;
-    text-align: start;    
+    text-align: start;
   }
-  #pills-tab  {
+  #pills-tab {
     display: flex;
     justify-content: center;
     flex-direction: column;

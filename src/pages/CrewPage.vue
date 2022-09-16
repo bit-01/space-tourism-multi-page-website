@@ -56,7 +56,7 @@
             :key="index"
             :class="['carousel-item', 'crew-image', index == 0 ? 'active' : '']"
           >
-            <img :src="item.images.png" class="d-block" :alt="item.name" />
+            <img :src="publicPath+item.images.png" class="d-block" :alt="item.name" />
           </div>
         </div>
       </div>
@@ -76,6 +76,7 @@ export default {
       metaData: useRoute().meta
     };
   },
+  props: ['publicPath'],
   beforeCreate: function () {
     document.body.className = "crew";
   },

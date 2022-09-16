@@ -22,12 +22,12 @@
 </template>
 
 <script>
-import sData from "@/data.json";
 
 export default {
   data() {
-    return { sData };
+
   },
+  props: ['publicPath'],
   beforeCreate: function () {
     document.body.className = "home";
   },

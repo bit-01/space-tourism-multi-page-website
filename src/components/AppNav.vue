@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-md">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="/shared/logo.svg">
+          <img :src="publicPath+'shared/logo.svg'">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
           aria-controls="offcanvasNavbar">
@@ -39,10 +39,7 @@
   
   export default {
     name: 'AppNav',
-    components: {
-  
-  
-    }
+    props: ['publicPath']
   }
   </script>
   

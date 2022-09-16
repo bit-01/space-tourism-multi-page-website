@@ -1,5 +1,5 @@
 <template>
-  <AppNav />
+  <AppNav :publicPath="publicPath" />
 
   <main
     style="flex-grow: 1; flex-grow: 1; align-items: center; display: inherit"
@@ -7,14 +7,13 @@
     <!-- <router-view /> -->
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
-        <component :is="Component" />
+        <component :is="Component" :publicPath="publicPath" />
       </transition>
     </router-view>
   </main>
 </template>
 
 <script>
-import sData from "@/data.json";
 import AppNav from "@/components/AppNav.vue";
 
 export default {
@@ -23,7 +22,9 @@ export default {
     AppNav,
   },
   data() {
-    return { sData };
+    return { 
+      publicPath: process.env.BASE_URL
+     };
   },
 };
 </script>
