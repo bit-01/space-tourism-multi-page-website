@@ -5,14 +5,14 @@
         <h5 class="subheading2"><span>02</span> Meet your crew</h5>
       </div>
     </div>
-    <div class="row">
+    <div class="row h-md-100 justify-content-md-center justify-content-lg-start">
       <div
         id="crew-carousel"
-        class="carousel carousel-fade order-2 col-lg-6 crew-carousel"
+        class="carousel carousel-fade order-md-1 order-2 col-lg-8 crew-carousel"
         data-bs-ride="carousel"
-        
+        data-bs-interval="8000"
       >
-        <div class="carousel-indicators">
+        <div class="carousel-indicators order-md-2 order-1">
           <button
             v-for="(item, index) of crew"
             :key="index"
@@ -24,34 +24,40 @@
             :aria-label="item.name"
           ></button>
         </div>
-        <div class="carousel-inner d-flex flex-nowrap">
+        <div class="carousel-inner d-flex flex-nowrap order-md-1 order-2">
           <div
             v-for="(item, index) of crew"
             :key="index"
             :class="['carousel-item', index == 0 ? 'active' : '']"
           >
-            <div class="col-12">
+            <div class="col-12 col-lg-10">
               <div class="carousel-caption">
                 <h6 class="subheading1">{{ item.role }}</h6>
                 <h3>{{ item.name }}</h3>
-                <p>{{ item.bio }}</p>
+                <p class="col-md-7">{{ item.bio }}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="col-lg-6 order-1  carousel carousel-fade crew-carousel" id="crew-carousel-image"
+        class="
+          col-lg-3 col-md-7
+          order-1 order-md-2
+          carousel carousel-fade
+          crew-carousel
+        "
+        id="crew-carousel-image"
         data-bs-ride="false"
       >
-      <div class="carousel-inner">
-        <div
-          v-for="(item, index) of crew"
-          :key="index"
-          :class="['carousel-item', 'crew-image', index == 0 ? 'active' : '']"
-        >
-          <img :src="item.images.png" class="d-block" :alt="item.name" />
-        </div>
+        <div class="carousel-inner">
+          <div
+            v-for="(item, index) of crew"
+            :key="index"
+            :class="['carousel-item', 'crew-image', index == 0 ? 'active' : '']"
+          >
+            <img :src="item.images.png" class="d-block" :alt="item.name" />
+          </div>
         </div>
       </div>
     </div>
@@ -72,13 +78,12 @@ export default {
     document.body.className = "crew";
   },
   mounted() {
-    let car = document.querySelector('#crew-carousel')
-    let imgCar = new Carousel(document.querySelector('#crew-carousel-image'))
-    car.addEventListener('slide.bs.carousel', event => {
-        imgCar.to(event.to)
-    })
+    let car = document.querySelector("#crew-carousel");
+    let imgCar = new Carousel(document.querySelector("#crew-carousel-image"));
+    car.addEventListener("slide.bs.carousel", (event) => {
+      imgCar.to(event.to);
+    });
   },
-  
 };
 </script>
 
@@ -111,6 +116,10 @@ body.crew .carousel-item.active {
 
 .crew .carousel-item .carousel-caption {
   position: unset;
+  color: inherit;
+}
+.crew .carousel-item .carousel-caption p {
+  color: #d0d6f9 !important;
 }
 .crew .carousel-item img {
   width: 177px;
@@ -118,8 +127,8 @@ body.crew .carousel-item.active {
 }
 .crew .carousel-item.active .carousel-caption {
   display: flex;
-flex-direction: column;
-padding-top: unset;
+  flex-direction: column;
+  padding-top: unset;
 }
 .crew-image {
   border-bottom: #383b4b solid 1px;
@@ -127,7 +136,7 @@ padding-top: unset;
 }
 
 .crew .carousel-indicators {
-    position: unset;
+  position: unset;
 }
 
 .carousel-indicators button[data-bs-target] {
@@ -152,9 +161,83 @@ padding-top: unset;
 h3 {
   font-size: 24px !important;
 }
+#crew-carousel {
+  display: flex;
+  flex-direction: column;
+}
+.carousel .carousel-item {
+  transition-duration: 1.4s;
+}
 @media (min-width: 768px) {
+  .subheading1 {
+    font-size: 24px !important;
+  }
+  h3 {
+    font-size: 40px !important;
+  }
+  .carousel-caption p {
+    margin: 0.5em auto;
+  }
+
+  .carousel-indicators {
+    margin: 1em auto !important;
+  }
+
+  .crew .carousel-item img {
+    width: 100%;
+  }
+
+  #crew-carousel-image .carousel-item {
+    margin-bottom: 0;
+  }
+
+  .container {
+    align-self: stretch;
+    flex-direction: column;
+    display: flex;
+  }
+  #crew-carousel-image {
+    align-items: flex-end;
+    display: flex;
+  }
+
+  .h-md-100 {
+    height: 100%;
+  }
+
+  .crew-carousel {
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media (min-width: 992px) {
+  .subheading1 {
+    text-align: start;
+    font-size: 32px !important;
+  }
+  h3 {
+    text-align: start;
+    font-size: 56px !important;
+  }
+  .carousel-caption p {
+    margin: 1em 0;
+    text-align: start;
+  }
+  .carousel-indicators button[data-bs-target] {
+  width: 15px;
+  height: 15px;
+}
+.carousel-indicators {
+  margin: 0 !important;
+}
+#crew-carousel {
+  align-items: flex-start;
+}
+#crew-carousel-imgae {
+  position: absolute;
+bottom: 0;
+right: 17%;
+}
 }
 </style>
