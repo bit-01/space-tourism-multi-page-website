@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution](https://gitlab.com/bit-01/space-tourism-multi-page-website)
-- Live Site URL: [Live Site](https://bit-01.gitlab.com/space-tourism-multi-page-website)
+- Live Site URL: [Live Site](https://bit-01.gitlab.io/space-tourism-multi-page-website)
 
 ## My process
 
