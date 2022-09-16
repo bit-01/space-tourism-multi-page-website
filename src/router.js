@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-
+publicPath = process.env.BASE_URL
 const routes = [
     {
-        path: '/',
+        path: publicPath+'',
         name: 'app',
         component: () => import('@/pages/HomePage.vue'),
         meta: {
@@ -13,7 +13,7 @@ const routes = [
     },
     {
         name: 'destination',
-        path: '/destination/',
+        path: publicPath+'destination/',
         component: () => import('@/pages/DestinationPage.vue'),
         meta: {
             number:"01",
@@ -22,7 +22,7 @@ const routes = [
     },
     {
         name: 'crew',
-        path: '/crew/',
+        path: publicPath+'crew/',
         component: () => import('@/pages/CrewPage.vue'),
         meta: {
             number: "02",
@@ -31,7 +31,7 @@ const routes = [
     },
     {
         name: 'technology',
-        path: '/technology/',
+        path: publicPath+'technology/',
         component: () => import('@/pages/TechnologyPage.vue'),
         meta: {
             number: "03",
