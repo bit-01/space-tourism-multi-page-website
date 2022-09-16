@@ -1,8 +1,8 @@
 <template>
   <AppNav />
 
-  <main 
-    style="flex-grow: 1; flex-grow: 1; align-items: center; display: inherit;"
+  <main
+    style="flex-grow: 1; flex-grow: 1; align-items: center; display: inherit"
   >
     <!-- <router-view /> -->
     <router-view v-slot="{ Component }">
@@ -97,14 +97,13 @@ h5 {
   letter-spacing: 2.7px;
 }
 .subheading1 {
-  font-size: 28px !important;
+  font-size: 16px !important;
 }
 .subheading2 {
   font-size: 14px !important;
   font-family: "Barlow Condensed", sans-serif !important;
   letter-spacing: 2.35px;
   text-align: center;
-  
 }
 h5.subheading2 {
   margin-bottom: 2.2em;
@@ -136,9 +135,15 @@ h5.subheading2 > span {
     font-size: 24px !important;
     text-align: start;
   }
+
+  .subheading1 {
+    font-size: 28px !important;
+  }
 }
 
 @media (min-width: 992px) {
-  .page-title h5 {margin-bottom: .5em;}
+  .page-title h5 {
+    margin-bottom: 0.5em;
+  }
 }
 </style>

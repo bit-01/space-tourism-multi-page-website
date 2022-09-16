@@ -46,10 +46,14 @@
   }
   </script>
   
-  <style scoped>
-  .offcanvas-backdrop {
+<style>
+  body nav .offcanvas-backdrop {
     display: none !important;
   }
+</style>
+
+  <style scoped>
+
   nav {
     margin-top: 1em;
   }
