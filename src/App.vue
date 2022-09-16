@@ -112,7 +112,9 @@ h5.subheading2 > span {
   opacity: 25%;
   margin-right: 18px;
 }
-
+body p {
+  color: #D0D6F9;
+}
 @media (min-width: 768px) {
   h1 {
     font-size: 150px !important;
