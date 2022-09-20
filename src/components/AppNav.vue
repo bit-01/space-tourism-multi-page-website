@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-md">
       <div class="container-fluid">
-        <div class="navbar-brand" href="#" >
+        <div class="navbar-brand" >
           <img :src="publicPath+'shared/logo.svg'" alt="website logo">
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
